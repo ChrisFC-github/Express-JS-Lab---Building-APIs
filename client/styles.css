@@ -1,0 +1,16 @@
+body {
+    background: rgb(248, 248, 248);
+    color: rgb(44, 44, 44);
+}
+
+.form-group {
+    margin: 25px;
+}
+
+.btn {
+    margin: 25px;
+}
+
+.card {
+    margin: 25px;
+}
