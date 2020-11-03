@@ -19,6 +19,8 @@ app.use('/api', apiRouter);
 app.use(express.static('client'));
 //* Add the api router to the express app with the path /api.
 
+
+//* IF NOT CROSSORIGIN or multiple ports if we are local we are running same port so we don't need CORS policies
 app.listen(3000, () => console.log(`
 
     This server is Running on Port: 3000

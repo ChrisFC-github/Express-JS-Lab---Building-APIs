@@ -45,8 +45,14 @@ chirpsRouter.post('/', (req, res) => {
 chirpsRouter.put('/:chirpid', (req, res) => {
     const id = req.params.chirpid
     //* uses chirpstore API 
-    const chirpupdate = chirpstore.UpdateChirp(id)
+    //* passes in an object when you edit 
+    const chirpObj = {
+        username: req.body.username,
+        message: req.body.message
+      };
+    const chirpupdate = chirpstore.UpdateChirp(id, chirpObj)
     res.json(chirpupdate);
+    res.sendStatus(200);
 });
 
 /*
@@ -58,7 +64,7 @@ chirpsRouter.delete('/:chirpid', (req, res) => {
     //* uses chirpstore API 
     const chirpdelete = chirpstore.DeleteChirp(id)
     res.json(chirpdelete);
-    res.json('Deleting a chirp with the ID: ' + req.params.chirpid);
+    res.sendStatus(200);
 });
 
 //* Remember to export your router with module.exports to ./chirps into chirps.json
